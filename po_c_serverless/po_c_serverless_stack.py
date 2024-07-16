@@ -65,7 +65,8 @@ class PoCServerlessStack(Stack):
                 "sqs:ReceiveMessage",
                 "sqs:DeleteMessage",
                 "sqs:GetQueueAttributes",
-                "sqs:GetQueueUrl"
+                "sqs:GetQueueUrl",
+                "sqs:SendMessage"
             ],
             sid="ReadSQSPolicy"
         )
@@ -144,7 +145,7 @@ class PoCServerlessStack(Stack):
             role=lambda_first_role
         )
         
-        # Define the second Lambda function
+        # Define the second Lambda functi
         second_lambda = _lambda.Function(
             self, 'secondFunction',
             runtime=_lambda.Runtime.PYTHON_3_11,
