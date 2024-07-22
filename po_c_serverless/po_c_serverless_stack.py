@@ -183,7 +183,7 @@ class PoCServerlessStack(Stack):
         )
         
         # Add an email subscription to the SNS topic
-        topic.add_subscription(subs.EmailSubscription("omar.alnaji00@gmail.com"))
+        topic.add_subscription(subs.EmailSubscription("example@gmail.com"))
         
         # Create API Gateway REST API
         api = apigw.RestApi(
